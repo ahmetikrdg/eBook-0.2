@@ -1,0 +1,9 @@
+﻿@model BlogAuthorListViewModel
+
+
+@foreach (var item in Model.BAuthor)
+{
+
+    @await Html.PartialAsync("_BlogAuthorList", item)
+
+}

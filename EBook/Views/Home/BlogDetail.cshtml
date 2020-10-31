@@ -1,0 +1,28 @@
+﻿@model BlogDetailModel
+
+    <div class="row">
+        <div class="col-md-9">
+            <div class="card mb-3">
+                <img src="@Model.Blog.Image" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Blog.Tittle</h5>
+                    <p class="card-text">@Model.Blog.Content</p>
+                    <p class="card-text"><small class="text-muted">@Model.Blog.Date</small></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <img src="@Model.Bauthor.Image" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><a asp-controller="Home" asp-action="BlogAuthorDetail" asp-route-Byurl="@Model.Bauthor.Url"> @Model.Bauthor.NameSurname</a></h5>
+                </div>
+            </div>
+
+            <hr />
+
+            @await Component.InvokeAsync("BlogLatest")
+
+        </div>
+    </div>

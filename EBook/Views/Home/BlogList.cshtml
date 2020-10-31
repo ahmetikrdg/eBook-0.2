@@ -1,0 +1,17 @@
+﻿@model BlogListViewModel
+
+
+<div class="row">
+    <div class="col-md-9">
+        @foreach (var item in Model.Blogs)
+        {
+            @await Html.PartialAsync("_BlogList", item)
+
+        }
+    </div>
+
+    <div class="col-md-3">
+        @await Component.InvokeAsync("BlogLatest")
+        @await Component.InvokeAsync("BookGetFirst")
+    </div>
+</div>
